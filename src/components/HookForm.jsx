@@ -15,23 +15,28 @@ const HookForm = ()=> {
         <form>
             <div className="form-group">
                 <label htmlFor="">First Name:</label>
-                <input type="text" name="" id="" className="form-control" onChange={ (e) => setfirstName(e.target.value)}/>
+                <input type="text" className="form-control" onChange={ (e) => setfirstName(e.target.value)}/>
+                {firstName.length < 2 && firstName.length >0 ? <p>Must be at least 2 characters</p> : null}
                 </div>
                 <div className="form-group">
                 <label htmlFor="">Last Name:</label>
-                <input type="text" name="" id="" className="form-control" onChange={ (e) => setlastName(e.target.value)}/>
+                <input type="text" className="form-control" onChange={ (e) => setlastName(e.target.value)}/>
+                {lastName.length < 2 && lastName.length >0 ? <p>Must be at least 2 characters</p> : null}
                 </div>
                 <div className="form-group">
                 <label htmlFor="">Email:</label>
-                <input type="text" name="" id="" className="form-control" onChange={ (e) => setemail(e.target.value)}/>
+                <input type="text" className="form-control" onChange={ (e) => setemail(e.target.value)}/>
+                {email.length < 2 && email.length >0 ? <p>Must be at least 2 characters</p> : null}
                 </div>
                 <div className="form-group">
                 <label htmlFor="">Password:</label>
-                <input type="password" name="" id="" className="form-control" onChange={ (e) => setpassword(e.target.value)}/>
+                <input type="password" className="form-control" onChange={ (e) => setpassword(e.target.value)}/>
+                {password.length < 8 && password.length >0 ? <p>Must be at least 8 characters</p> : null}
                 </div>
                 <div className="form-group">
                 <label htmlFor="">Confirm Password:</label>
-                <input type="password" name="" id="" className="form-control" onChange={ (e) => setconfirmPassword(e.target.value)}/>
+                <input type="password" className="form-control" onChange={ (e) => setconfirmPassword(e.target.value)}/>
+                {confirmPassword != password ? <p>Passwords must match</p> : null}
                 </div>
                 <input type="submit" value="Register" className="btn btn-success" />
         </form>
@@ -47,4 +52,3 @@ const HookForm = ()=> {
 
 export default HookForm;
 
-//  onChange={ (e) => setFirstName(e.target.value)}
